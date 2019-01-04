@@ -21,9 +21,9 @@
 
             $("#searchWiki").click(function () {
                 var q = $('#searchid').val();
-                console.log("https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max&origin=https://facundotourn.github.io/wikilinks/");
+                console.log("https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max&origin=https://facundotourn.github.io/wikilinks/&format=json");
 
-                $.getJSON("https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max", {
+                $.getJSON("https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max&origin=https://facundotourn.github.io/wikilinks/&format=json", {
                     format: 'jsonp'
                 })
                     .done(function (data) {
