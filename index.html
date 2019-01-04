@@ -30,8 +30,14 @@
                     var words = [];
                     
                     $.each(data.query.pages[pageId].links, function(index, item) {
+                        var classBtn;
+                        if(Math.random() > 0.5) {
+                            classBtn = 'btn-outline-danger';
+                        } else {
+                            classBtn = 'btn-outline-secondary';
+                        }
 
-                        $('<button class="btn btn-bg btn-outline-secondary mb-1 mr-1" onclick="buscarLinks(\'' + item.title.replace(/ /g,"_") + '\')">').html(item.title).appendTo('#cartas');
+                        $('<button class="btn btn-bg ' + classBtn + ' mb-1 mr-1" onclick="buscarLinks(\'' + item.title.replace(/ /g,"_") + '\')">').html(item.title).appendTo('#cartas');
 
                         words.push({text: item.title, weight: Math.random(788)});
                     });
@@ -53,7 +59,13 @@
 
                     
                     $.each(data.query.pages[pageId].links, function(index, item) {
-                        $('<button class="btn btn-bg btn-outline-secondary mb-1 mr-1" onclick="buscarLinks(\'' + item.title.replace(/ /g,"_") + '\')">').html(item.title).appendTo('#cartas');
+                        if(Math.random() > 0.5) {
+                            classBtn = 'btn-outline-danger';
+                        } else {
+                            classBtn = 'btn-outline-secondary';
+                        }
+                        
+                        $('<button class="btn btn-bg ' + classBtn + ' mb-1 mr-1" onclick="buscarLinks(\'' + item.title.replace(/ /g,"_") + '\')">').html(item.title).appendTo('#cartas');
                     });
                 });
         }
