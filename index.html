@@ -21,14 +21,10 @@
 
             $("#searchWiki").click(function () {
                 var q = $('#searchid').val();
-                console.log("https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max&origin=https://facundotourn.github.io/wikilinks/&format=json");
 
-                $.getJSON("https://cors.io/?https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max&format=json", {
-                    format: 'jsonp'
-                })
-                    .done(function (data) {
-                        console.log(data)
-                    });
+                $.getJSON("https://cors.io/?https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max&format=json", function(data) {
+                    console.log(data);
+                });
              });
         });
            
