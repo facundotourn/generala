@@ -18,12 +18,33 @@
             $('.btn').click(function() {
                 alert('Funciona jquery!');
             });
+
+            $("#searchWiki").click(function(){
+                var q = $('#searchid').val();
+                $.getJSON("https://en.wikipedia.org/w/api.php?action=query&titles=" + q + "rainbow&prop=links&pllimit=max&origin=*",
+                function(data) {
+                    console.log(data)
+                });
+             });
+
+             
         });
+           
+     
+
+
+
+
     </script>
 </head>
 
 <body>
 
     <button href="#" class="btn btn-success">Entrar</button>
+
+    <div id="search">                    
+         <input id="searchid" class="input-lg" name="gsrsearch" type="text" placeholder="search Wiki" autocomplete="off"/>
+         <button id="searchWiki" class="btn-lg btn-info">Search</button>                          
+    </div> 
 </body>
 </html>
