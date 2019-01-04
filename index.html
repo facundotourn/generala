@@ -26,8 +26,6 @@
                     console.log(data)
                 });
              });
-
-             
         });
            
      
@@ -39,12 +37,20 @@
 </head>
 
 <body>
+    <div class="container">
+            
+        <div class="pb-2 mt-4 mb-2 border-bottom">
+            <p class="h2">WikiChase</p>
+            <p class="h6">Por Facundo Tourn y Martín Serramo</p>
+            <div class="btn-group pull-right">
+                <button class="btn btn-primary">Jugar</button>
+            </div>
+        </div>
+        <div id="search">                    
+            <input id="searchid" class="input-lg" name="gsrsearch" type="text" placeholder="search Wiki" autocomplete="off"/>
+            <button id="searchWiki" class="btn-lg btn-info">Search</button>                          
+        </div> 
 
-    <button href="#" class="btn btn-success">Entrar</button>
-
-    <div id="search">                    
-         <input id="searchid" class="input-lg" name="gsrsearch" type="text" placeholder="search Wiki" autocomplete="off"/>
-         <button id="searchWiki" class="btn-lg btn-info">Search</button>                          
-    </div> 
+    </div>
 </body>
 </html>
