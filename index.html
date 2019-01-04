@@ -19,12 +19,16 @@
                 alert('Funciona jquery!');
             });
 
-            $("#searchWiki").click(function(){
+            $("#searchWiki").click(function () {
                 var q = $('#searchid').val();
-                $.getJSON("https://en.wikipedia.org/w/api.php?action=query&titles=" + q + "rainbow&prop=links&pllimit=max&origin=*",
-                function(data) {
-                    console.log(data)
-                });
+                console.log("https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max&origin=https://facundotourn.github.io/wikilinks/");
+
+                $.getJSON("https://es.wikipedia.org/w/api.php?action=query&titles=" + q + "&prop=links&pllimit=max", {
+                    format: 'jsonp'
+                })
+                    .done(function (data) {
+                        console.log(data)
+                    });
              });
         });
            
